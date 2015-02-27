@@ -1,9 +1,9 @@
 // Typography
-$base-font-family: "aktiv-grotesk-std", sans-serif;;
-$heading-font-family: "phoreuscherokee", sans-serif;;
+$base-font-family: "arno-pro",serif;
+$heading-font-family: "phoreuscherokee", sans-serif;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: em(18);
 
 // Line height
 $base-line-height: 1.5;
@@ -16,13 +16,15 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
+$blue: #29aae1;
+$yellow: #f5ce2b;
+$dark-gray: #404041;
+$medium-gray: #808080;
+$light-gray: #cccccb;
+$white: #fff;
 
 // Font Colors
-$base-background-color: #fff;
+$base-background-color: $light-gray;
 $base-font-color: $dark-gray;
 $action-color: $blue;
 

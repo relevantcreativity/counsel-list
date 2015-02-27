@@ -1,0 +1,64 @@
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.card {
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-margin: 1em;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $white;
+  border-radius: 5px;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  position: relative;
+
+  .card-image {
+    height: 125px;
+    padding: ($base-spacing / 2) 0;
+    text-align: center;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      max-height: 100%;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    color: $blue;
+    font-family: $heading-font-family;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 0 ($base-spacing / 2) ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+
+    a.button{
+      margin: 0 auto;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background-color: darken($white, 2%);
+  }
+}

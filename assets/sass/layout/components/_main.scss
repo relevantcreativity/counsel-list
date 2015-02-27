@@ -1,0 +1,28 @@
+*{
+  @include box-sizing(border-box);
+}
+
+html, body{
+  height:100%;
+}
+
+body{
+  border-top: 5px solid $blue;
+  background: $light-gray;
+}
+
+section{
+  margin: $base-spacing 0;
+
+  &.background{
+    margin: 0;
+  }
+
+  &.content{
+    margin: $base-spacing;
+  }
+}
+
+.center{
+  text-align:center;
+}

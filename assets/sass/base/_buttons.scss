@@ -1,18 +1,22 @@
 #{$all-button-inputs},
-button {
+button,
+a.button {
+  @include transition(all 0.2s ease-in-out);
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
   border-radius: $base-border-radius;
   border: none;
-  color: #fff;
+  box-shadow: 3px 3px 0 0 darken($action-color, 15%);
+  color: $white;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
+  font-family: $heading-font-family;
   font-size: $base-font-size;
   font-weight: 600;
-  line-height: 1;
-  padding: 0.75em 1em;
+  line-height: 2.5em;
+  padding: 0 1em;
+  position: relative;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -21,11 +25,29 @@ button {
   &:hover,
   &:focus {
     background-color: darken($action-color, 15%);
-    color: #fff;
+    color: $white;
+    box-shadow: 3px 3px 0 0 darken($action-color, 30%);
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.outline{
+    background: $white;
+    border: 1px solid $action-color;
+    box-shadow: none;
+    color: $action-color;
+
+    &:hover,
+    &:focus {
+      background-color: $action-color;
+      color: $white;
+    }
+  }
+
+  &.large{
+    font-size: 1.6em;
   }
 }

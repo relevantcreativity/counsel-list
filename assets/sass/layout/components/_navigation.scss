@@ -1,0 +1,93 @@
+.sliding-menu-content {
+  $sliding-menu-border-color: $dark-gray;
+  $sliding-menu-background: lighten($sliding-menu-border-color, 5%);
+  $sliding-menu-color: $white;
+  $sliding-menu-border: 1px solid $sliding-menu-border-color;
+  $sliding-menu-background-hover: $blue;
+  $sliding-menu-color-hover: $white;
+  $sliding-menu-background-focus: lighten($sliding-menu-background, 5%);
+
+  @include position(fixed, 0px auto 0px 0px);
+  @include size(220px 100%);
+  @include transform(translateX(-220px));
+  @include transition(all 0.25s linear);
+  background: $sliding-menu-background;
+  z-index: 999999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include media($large-screen-up) {
+    @include position(relative, 0px 0px 0px 0px);
+    @include size(auto auto);
+    @include transform(translateX(0));
+    @include transition(none);
+
+    background: none;
+    float: right;
+  }
+
+  li {
+
+    @include media($large-screen-up) {
+      display: inline-block;
+    }
+
+    a {
+      border-bottom: $sliding-menu-border;
+      color: $sliding-menu-color;
+      display: block;
+      font-weight: bold;
+      padding: 1em;
+
+      &:focus {
+        background-color: $sliding-menu-background-focus;
+      }
+
+      &:hover {
+        background-color: $sliding-menu-background-hover;
+        color: $sliding-menu-color-hover;
+      }
+
+      @include media($large-screen-up) {
+        border-bottom: 0 none;
+        color: $medium-gray;
+        line-height: 60px;
+        padding: 0 1em;
+      }
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+}
+
+.sliding-menu-fade-screen {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: 0.4;
+    visibility: visible;
+  }
+
+  @include media($large-screen-up) {
+    display: none;
+  }
+}
+
+.sliding-menu-button {
+  float: right;
+  font-weight: normal;
+  text-transform: uppercase;
+
+  @include media($large-screen-up) {
+    display: none;
+  }
+}
+
+// Based on code by Diego Eis

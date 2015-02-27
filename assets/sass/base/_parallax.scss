@@ -1,0 +1,75 @@
+// modified from http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
+
+.parallax{
+  position: relative;
+
+  &.background {
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-position:50% 50%\9 !important;
+  }
+
+  &.not-fullscreen {
+    height:50%;
+  }
+
+  &.fullscreen,
+  &.fullscreen.not-overflow,{
+    min-height:600px;
+  }
+
+  &.not-overflow,
+  &.not-overflow .wrapper {
+    height:100%;
+    overflow:hidden;
+  }
+
+  .overlay{
+    background: rgba(64, 64, 65, 0.5);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    display:table;
+    min-height:100%;
+    width:100%;
+  }
+  .wrapper-inner {
+    display:table-cell;
+    padding: 2em;
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+
+    h3{
+      color: $white;
+      font-size: 1.2em;
+      padding: 2em;
+
+      @include media($large-screen-up) {
+        font-size: 2em;
+      }
+
+      &.border{
+        border: 2px solid $yellow;
+        position: relative;
+
+        &:before{
+          border: 2px solid $yellow;
+          bottom: 5px;
+          content: "";
+          left: 5px;
+          position: absolute;
+          right: 5px;
+          top: 5px;
+        }
+      }
+    }
+  }
+
+
+}
