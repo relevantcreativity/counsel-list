@@ -26,3 +26,42 @@ section{
 .center{
   text-align:center;
 }
+
+.page-content{
+  @include clearfix;
+
+  .sidebar{
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+  }
+
+  .main-content{
+    background: $white;
+
+    @include media($large-screen) {
+      @include span-columns(8);
+      @include omega();
+    }
+
+    &.no-background{
+      background: none;
+
+      .text-content{
+        padding: 0;
+      }
+    }
+
+    h1{
+      background: $blue;
+      color: $white;
+      line-height: 2;
+      margin: 0;
+      padding: 0 $base-spacing/2;
+    }
+
+    .text-content{
+      padding: $base-spacing;
+    }
+  }
+}

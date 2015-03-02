@@ -1,0 +1,18 @@
+.profile{
+  background: $white;
+  margin: $base-spacing 0;
+  padding: $base-spacing;
+  position: relative;
+  text-align: center;
+
+  h2, h5{
+    margin: 0;
+  }
+
+  .image{
+
+    img{
+      max-width: 50%;
+    }
+  }
+}

@@ -8,13 +8,11 @@ footer[role=contentinfo]{
 
     &.footer-content{
       @include clearfix;
+
       margin-bottom: 0;
     }
 
     &.terms{
-      @include span-columns(12);
-      @include omega();
-
       background:$dark-gray;
       color: $white;
       line-height: 2em;
@@ -32,7 +30,7 @@ footer[role=contentinfo]{
     margin-bottom: 2em;
     text-align: center;
 
-    @include media($large-screen) {
+    @include media($wide-screen) {
       @include span-columns(6);
 
       text-align: left;
@@ -47,7 +45,7 @@ footer[role=contentinfo]{
     @include clearfix;
     margin-bottom: 0;
 
-    @include media($large-screen) {
+    @include media($wide-screen) {
       @include span-columns(6);
       @include omega();
     }
@@ -73,11 +71,14 @@ footer[role=contentinfo]{
 
   li a {
     color: $dark-gray;
-    padding-left: $base-spacing;
 
     &:focus,
     &:hover {
       text-decoration: underline;
+    }
+
+    @include media($medium-screen) {
+      padding-left: $base-spacing;
     }
   }
 
