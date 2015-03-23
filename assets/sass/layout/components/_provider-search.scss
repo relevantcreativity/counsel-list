@@ -1,14 +1,6 @@
-.selectize-dropdown .optgroup-header{
-  background: #dfdfdf;
-  font-weight: bold;
-}
+.search{
 
-.search-fields{
-
-  .children{
-
-    select{
-      display: none;
-    }
+  div[data-central-child]{
+    display: none;
   }
 }

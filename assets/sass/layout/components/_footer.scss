@@ -30,7 +30,7 @@ footer[role=contentinfo]{
     margin-bottom: 2em;
     text-align: center;
 
-    @include media($wide-screen) {
+    @include media($wide-screen-up) {
       @include span-columns(6);
 
       text-align: left;
@@ -45,7 +45,7 @@ footer[role=contentinfo]{
     @include clearfix;
     margin-bottom: 0;
 
-    @include media($wide-screen) {
+    @include media($wide-screen-up) {
       @include span-columns(6);
       @include omega();
     }
@@ -54,7 +54,7 @@ footer[role=contentinfo]{
   ul {
     margin-bottom: $base-spacing * 2;
 
-    @include media($medium-screen) {
+    @include media($medium-screen-up) {
       @include span-columns(2 of 6);
       @include omega(3n);
       @include clearfix;
@@ -64,7 +64,7 @@ footer[role=contentinfo]{
   li {
     text-align: center;
 
-    @include media($medium-screen) {
+    @include media($medium-screen-up) {
       text-align: left;
     }
   }
@@ -77,7 +77,7 @@ footer[role=contentinfo]{
       text-decoration: underline;
     }
 
-    @include media($medium-screen) {
+    @include media($medium-screen-up) {
       padding-left: $base-spacing;
     }
   }

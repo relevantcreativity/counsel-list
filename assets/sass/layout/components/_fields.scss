@@ -1,0 +1,86 @@
+fieldset{
+
+  p{
+    span{
+      display: block;
+    }
+  }
+
+  p.col-full{
+    @include media($large-screen-up) {
+      @include span-columns(8);
+      @include omega();
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(12);
+      @include omega();
+    }
+  }
+
+  p.col-tq{
+    @include media($large-screen-up) {
+      @include span-columns(6);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(9);
+    }
+  }
+
+  p.col-oq{
+    @include media($large-screen-up) {
+      @include span-columns(2);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(3);
+    }
+  }
+
+  p.col-half{
+    @include media($large-screen-up) {
+      @include span-columns(4);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(6);
+    }
+  }
+
+  p.col-quarter{
+    @include media($large-screen-up) {
+      @include span-columns(2);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(3);
+    }
+  }
+
+  p.col-two{
+    @include media($large-screen-up) {
+      @include span-columns(2);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(2);
+    }
+  }
+
+  p.col-last{
+    @include media($large-screen-up) {
+      @include omega();
+    }
+
+    @include media($wide-screen-up) {
+      @include omega();
+    }
+  }
+
+  p.hidden{
+    display: none;
+  }
+
+
+}

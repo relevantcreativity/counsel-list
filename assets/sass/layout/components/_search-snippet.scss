@@ -2,4 +2,35 @@
   background: $blue;
   border: 10px solid $white;
   border-radius: 5px;
+  color: $white;
+  margin: $base-spacing;
+  padding: $base-spacing;
+
+  @include media($medium-screen-up) {
+    bottom: 0;
+    margin: 0;
+    width: 400px;
+    position: absolute;
+    right: $base-spacing;
+  }
+
+  @include media($large-screen-up) {
+    width: 500px;
+  }
+
+  @include media($wide-screen-up) {
+    right: ($base-spacing * 3);
+  }
+}
+
+.hero-container{
+  position: relative;
+
+  @include media($medium-screen-up) {
+    padding-bottom: 80px;
+  }
+
+  @include media($large-screen-up) {
+    padding-bottom: 100px;
+  }
 }

@@ -1,20 +1,44 @@
 fieldset {
-  background-color: lighten($base-border-color, 10%);
-  border: $base-border;
+  @include clearfix();
+
+  background-color: $white;
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  .wrapper{
+    padding: 0 $base-spacing;
+  }
+}
+
+legend{
+  background: $blue;
+  color: $white;
+  display: block;
+  font-family: $heading-font-family;
+  font-size: 1.8em;
+  line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
-  padding: $base-spacing;
+  padding: 0.2em 0.5em;
+  text-align: center;
+  width: 100%;
+
+  @include media($large-screen-up) {
+    font-size: 2.4em;
+  }
 }
 
 input,
 label,
 select {
-  display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
 }
 
 label {
-  font-weight: 600;
+  color: $dark-gray;
+  font-family: $heading-font-family;
+  font-weight: 300;
   margin-bottom: $small-spacing / 2;
 
   &.required::after {
@@ -29,11 +53,12 @@ label {
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
-  background-color: $base-background-color;
+  background-color: $white;
   border: $base-border;
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
+  color: $dark-gray;
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin-bottom: $base-spacing / 2;
@@ -49,6 +74,21 @@ textarea {
     border-color: $action-color;
     box-shadow: $form-box-shadow-focus;
     outline: none;
+  }
+
+  &[disabled]{
+    background: $light-gray;
+    color: $medium-gray;
+  }
+
+  &.fixed-small{
+    display: inline-block;
+    width: 250px;
+  }
+
+  &.fixed-tiny{
+    display: inline-block;
+    width: 100px;
   }
 }
 
@@ -75,4 +115,93 @@ select {
   margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox, .radio{
+
+  label{
+    background: $white;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    line-height: 1;
+    padding: 10px 20px;
+    position: relative;
+
+    &:hover{
+      border-color:$medium-gray;
+      cursor: pointer;
+    }
+
+    &:before {
+      color: $white;
+      content: "\00a0";
+      display: inline-block;
+      line-height: 1;
+      font-family: "Font-Awesome";
+
+      width: 16px;
+      height: 16px;
+      text-align: center;
+
+      margin-right: 10px;
+      background-color: #aaa;
+      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    }
+
+    @include media($medium-screen-up) {
+      display: inline-block;
+      margin:0 0.5em 0.5em 0;
+      min-width: 120px;
+    }
+  }
+
+  &.full label{
+    display:block !important;
+  }
+
+  input[type=radio]:checked + label, input[type=checkbox]:checked + label{
+    border-color: $blue;
+  }
+
+  input[type=radio]:checked + label:before {
+    background: $blue;
+    content: "\2022";
+  }
+
+  input[type=checkbox]:checked + label:before {
+    background: $blue;
+    content: "\2713";
+  }
+}
+
+.radio label:before {
+  border-radius: 8px;
+}
+.checkbox label:before {
+  border-radius: 3px;
+}
+
+.chosen-container{
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  width: 100% !important;
+}
+
+.chosen-container-single .chosen-single{
+  height: 45px;
+  line-height: 44px;
+}
+
+.chosen-container-single .chosen-single div{
+  top: 12px;
+}
+
+.chosen-container-single .chosen-single abbr{
+  top: 17px;
 }

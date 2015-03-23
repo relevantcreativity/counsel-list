@@ -1,9 +1,18 @@
-.profile{
-  background: $white;
-  margin: $base-spacing 0;
-  padding: $base-spacing;
-  position: relative;
-  text-align: center;
+.profile.full{
+
+  section{
+    background: $white;
+    margin: $base-spacing 0;
+    padding: $base-spacing;
+    position: relative;
+    text-align: center;
+
+    h2{
+      color: $blue;
+      font-size:1.6em;
+      font-weight: 300;
+    }
+  }
 
   h2, h5{
     margin: 0;
@@ -13,6 +22,439 @@
 
     img{
       max-width: 50%;
+    }
+  }
+
+  #map{
+    margin: 2em 0;
+    min-height: 200px;
+    width: 100%;
+  }
+
+  section{
+
+    h2{
+      margin-top: 1em;
+
+      &:first-of-type{
+        margin-top: 0;
+      }
+    }
+
+    &.bio ul{
+      list-style: disc;
+      padding-left: $base-spacing;
+    }
+  }
+
+  @include media($large-screen-up) {
+    @include clearfix;
+
+    section{
+      text-align: left;
+    }
+
+    section.primary{
+      @include span-columns(6);
+
+      .image{
+        @include span-columns(2 of 6);
+
+        img{
+          max-width:100%;
+        }
+      }
+
+      .main, .additional{
+        @include span-columns(4 of 6);
+        @include omega();
+
+        h4, p{
+          @include span-columns(4 of 4);
+          @include omega();
+        }
+
+        dl{
+          @include clearfix();
+
+          dt{
+            @include span-columns(2 of 4);
+          }
+          dd{
+            @include span-columns(2 of 4);
+            @include omega();
+          }
+        }
+      }
+
+      .additional{
+        @include shift(2 of 6);
+      }
+    }
+    section.ratings{
+      @include span-columns(2);
+      @include omega();
+    }
+
+    section.bio{
+      @include span-columns(5);
+    }
+    section.areas{
+      @include span-columns(3);
+      @include omega();
+    }
+    section.membership{
+      @include span-columns(8);
+      @include omega();
+    }
+    section.reviews.full{
+      @include span-columns(8);
+      @include omega();
+    }
+    section.reviews.half, section.map{
+      @include span-columns(4);
+    }
+
+    section.map{
+      @include omega();
+    }
+  }
+
+  @include media($wide-screen-up) {
+    @include clearfix;
+
+    section.primary{
+      @include span-columns(9);
+
+      .image{
+        @include span-columns(2 of 9);
+
+        img{
+          max-width:100%;
+        }
+      }
+
+      .main{
+        @include span-columns(4 of 9);
+
+        h4, p{
+          @include span-columns(4 of 4);
+          @include omega();
+        }
+
+        dl{
+          @include clearfix();
+
+          dt{
+            @include span-columns(2 of 4);
+          }
+          dd{
+            @include span-columns(2 of 4);
+            @include omega();
+          }
+        }
+      }
+
+      .additional{
+        @include shift(0);
+        @include span-columns(3 of 9);
+        @include omega();
+
+        h4, p{
+          @include span-columns(3 of 3);
+          @include omega();
+        }
+
+        dl{
+          @include clearfix();
+
+          dt{
+            @include span-columns(1 of 3);
+          }
+          dd{
+            @include span-columns(2 of 3);
+            @include omega();
+          }
+        }
+      }
+    }
+    section.ratings{
+      @include span-columns(3);
+      @include omega();
+    }
+
+    section.bio{
+      @include span-columns(7);
+    }
+    section.areas{
+      @include span-columns(5);
+      @include omega();
+    }
+    section.membership{
+      @include span-columns(12);
+      @include omega();
+    }
+    section.reviews.full{
+      @include span-columns(12);
+      @include omega();
+
+      .comment{
+        float: left;
+        padding: $base-spacing;
+        width: 50%;
+
+        &:nth-child(2n+1){
+          clear: both;
+        }
+      }
+    }
+
+    section.reviews.half, section.map{
+      @include span-columns(6);
+    }
+
+    section.map{
+      @include omega();
+    }
+  }
+
+}
+
+.profile.stub{
+  background: $white;
+  margin: $base-spacing 0;
+  padding: $base-spacing;
+  position: relative;
+  text-align: center;
+
+  h2, h3{
+    margin: 0;
+  }
+
+  @include media($medium-screen-up) {
+    @include clearfix;
+
+    .image{
+      @include span-columns(1);
+
+      img{
+        max-width: 80%;
+      }
+    }
+
+    .main{
+      @include span-columns(3);
+      @include omega();
+
+      text-align: left;
+      vertical-align: top;
+
+      h4, p{
+        @include span-columns(3 of 3);
+        @include omega();
+      }
+
+      dl{
+        dt{
+          @include span-columns(1 of 3);
+        }
+        dd{
+          @include span-columns(2 of 3);
+          @include omega();
+        }
+      }
+    }
+
+    .additional{
+      @include span-columns(4);
+      @include omega();
+
+      text-align: left;
+
+      dl{
+        dt{
+          @include span-columns(1 of 4);
+        }
+        dd{
+          @include span-columns(3 of 4);
+          @include omega();
+        }
+      }
+    }
+  }
+
+  @include media($large-screen-up) {
+    @include clearfix;
+
+    h2, h5{
+      text-align: center;
+    }
+
+    .image{
+      @include span-columns(8);
+      @include omega();
+
+      img{
+        max-width: 50%;
+      }
+    }
+
+    .main, .additional{
+      @include span-columns(8);
+      @include omega();
+
+      h4, p{
+        @include span-columns(8 of 8);
+        @include omega();
+      }
+
+      dl{
+        dt{
+          @include span-columns(3 of 8);
+        }
+        dd{
+          @include span-columns(5 of 8);
+          @include omega();
+        }
+      }
+    }
+  }
+
+  @include media($wide-screen-up) {
+    @include clearfix;
+
+    h2, h5{
+      text-align: left;
+    }
+
+    .image{
+      @include span-columns(3);
+
+      img{
+        max-width: 80%;
+      }
+    }
+
+    .main{
+      @include span-columns(9);
+      @include omega();
+
+      h4, p{
+        @include span-columns(9 of 9);
+        @include omega();
+      }
+
+      dl{
+        dt{
+          @include span-columns(3 of 9);
+        }
+        dd{
+          @include span-columns(6 of 9);
+          @include omega();
+        }
+      }
+    }
+
+    .additional{
+      @include span-columns(12);
+      @include omega();
+
+      dl{
+        dt{
+          @include span-columns(3 of 12);
+        }
+        dd{
+          @include span-columns(9 of 12);
+          @include omega();
+        }
+      }
+    }
+  }
+}
+
+.profile{
+  font-size: 0.85em;
+
+  .stars{
+    color: $light-gray;
+
+    i{
+      padding: 0 2px;
+    }
+
+    .fa-star, .fa-star-half-o{
+      color: $yellow;
+    }
+  }
+
+  dl{
+    @include clearfix;
+
+    margin: 0;
+
+    dt{
+      clear: both;
+      text-transform: uppercase;
+    }
+
+    dt, dd{
+      margin: 0;
+      padding: 3px 0;
+    }
+  }
+
+  .review-ratings{
+    margin: $base-spacing 0;
+  }
+
+  .comment-page{
+    @include clearfix();
+  }
+
+  .comment{
+    font-size: 0.8em;
+
+    .text{
+      &:before{
+        @include triangle(30px, $blue, up-left);
+
+        bottom: -20px;;
+        content: " ";
+        position: absolute;
+        right: 25px;
+      }
+
+      background: $blue;
+      color: $white;
+      padding: $base-spacing;
+      position: relative;
+      text-align: justify;
+
+      span.rating{
+        display: block;
+        font-size: 0.75em;
+        text-align: center;
+
+        i{
+          padding:0 2px;
+
+          &.fa-star{
+            color: $yellow;
+          }
+        }
+      }
+    }
+
+    p{
+      color: $medium-gray;
+      margin-top: 5px;
+      padding-right: 65px;
+      text-align: right;
+
+      span{
+        color: $dark-gray;
+        text-transform: uppercase;
+      }
     }
   }
 }

@@ -9,6 +9,10 @@ html, body{
 body{
   border-top: 5px solid $blue;
   background: $light-gray;
+
+  &.ajax{
+    border-top: 0 none;
+  }
 }
 
 section{
@@ -20,6 +24,19 @@ section{
 
   &.content{
     margin: $base-spacing;
+
+    &.login{
+      @include media($large-screen-up) {
+        margin: $base-spacing auto;
+        max-width: 600px;
+      }
+    }
+    &.form{
+      @include media($wide-screen-up) {
+        margin: $base-spacing auto;
+        max-width: 900px;
+      }
+    }
   }
 }
 
@@ -27,21 +44,61 @@ section{
   text-align:center;
 }
 
+.blue{
+  color: $blue;
+}
+
+.yellow{
+  color: $yellow;
+}
+
+.light-gray{
+  color: $light-gray;
+}
+
+.medium-gray{
+  color: $medium-gray;
+}
+
+.dark-gray{
+  color: $dark-gray;
+}
+
 .page-content{
   @include clearfix;
 
   .sidebar{
-    @include media($large-screen) {
-      @include span-columns(4);
+    @include media($large-screen-up) {
+      @include span-columns(3);
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(3);
     }
   }
 
   .main-content{
     background: $white;
 
-    @include media($large-screen) {
-      @include span-columns(8);
+    @include media($large-screen-up) {
+      @include span-columns(5);
       @include omega();
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(9);
+      @include omega();
+    }
+
+    &.full{
+      @include media($large-screen-up) {
+        @include span-columns(8);
+        @include omega();
+      }
+      @include media($wide-screen-up) {
+        @include span-columns(12);
+        @include omega();
+      }
     }
 
     &.no-background{
@@ -49,6 +106,40 @@ section{
 
       .text-content{
         padding: 0;
+      }
+
+      section.tile{
+        background: $white;
+        margin: $base-spacing 0;
+        padding: $base-spacing;
+        position: relative;
+        text-align: center;
+
+        &.link{
+          padding: 0;
+          background: none;
+
+          a{
+            background: $yellow;
+            color: $white;
+            display: block;
+            font-size: 2.4em;
+            line-height: 2;
+            height: 100%;
+            width: 100%;
+
+            &:hover{
+              background: $white;
+              color: $blue;
+            }
+          }
+        }
+
+        h2{
+          color: $blue;
+          font-size:1.6em;
+          font-weight: 300;
+        }
       }
     }
 

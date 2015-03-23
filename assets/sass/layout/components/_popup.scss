@@ -1,0 +1,18 @@
+.mfp-content{
+  max-width: 900px;
+}
+
+.mfp-iframe-holder .mfp-content, .mfp-iframe-scaler{
+  height: 100%;
+  padding: 0;
+}
+
+.mfp-iframe-holder .mfp-close{
+  background-color: $action-color;
+  box-shadow: 3px 3px 0 0 darken($action-color, 15%);
+  padding-right: 0;
+  right: -22px;
+  text-align: center;
+  top: -22px;
+  width: 44px;
+}

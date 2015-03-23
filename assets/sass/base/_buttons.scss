@@ -1,5 +1,5 @@
 #{$all-button-inputs},
-button,
+button.button,
 a.button {
   @include transition(all 0.2s ease-in-out);
   @include appearance(none);
@@ -44,6 +44,19 @@ a.button {
     &:focus {
       background-color: $action-color;
       color: $white;
+    }
+  }
+
+  &.yellow{
+    background-color: $yellow;
+    box-shadow: 3px 3px 0 0 darken($yellow, 15%);
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: darken($yellow, 15%);
+      color: $white;
+      box-shadow: 3px 3px 0 0 darken($yellow, 30%);
     }
   }
 

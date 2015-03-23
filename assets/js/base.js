@@ -4,7 +4,17 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
+  $('.ajax-popup-link').magnificPopup({
+    type: 'ajax'
+  });
+  $('.iframe-popup-link').magnificPopup({
+    type: 'iframe'
+  });
 
+    $('select').chosen({
+        allow_single_deselect: true,
+        disable_search_threshold: 5
+    });
 
 });
 
