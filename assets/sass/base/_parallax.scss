@@ -11,6 +11,10 @@
 
   &.not-fullscreen {
     height:50%;
+
+    @include media($medium-screen-up) {
+      min-height: 450px;
+    }
   }
 
   &.fullscreen,

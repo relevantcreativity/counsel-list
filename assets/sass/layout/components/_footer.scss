@@ -85,10 +85,37 @@ footer[role=contentinfo]{
     }
 
     a{
+      margin-left: 0.5em;
+
       @include media($wide-screen-up) {
         display: block;
         margin-bottom: 0.5em;
+        margin-left: 0;
       }
+
+      &.facebook{
+        color: $facebook;
+        margin-left:0;
+
+        &:hover{
+          color: darken($facebook, 15%);
+        }
+      }
+      &.twitter{
+        color: $twitter;
+
+        &:hover{
+          color: darken($twitter, 15%);
+        }
+      }
+      &.linkedin{
+        color: $linkedin;
+
+        &:hover{
+          color: darken($linkedin, 15%);
+        }
+      }
+
     }
   }
 
@@ -115,27 +142,4 @@ footer[role=contentinfo]{
     margin-bottom: 0.4em;
     text-transform: uppercase;
   }
-
-  a.facebook{
-    color: $facebook;
-
-    &:hover{
-      color: darken($facebook, 15%);
-    }
-  }
-  a.twitter{
-    color: $twitter;
-
-    &:hover{
-      color: darken($twitter, 15%);
-    }
-  }
-  a.linkedin{
-    color: $linkedin;
-
-    &:hover{
-      color: darken($linkedin, 15%);
-    }
-  }
-
 }

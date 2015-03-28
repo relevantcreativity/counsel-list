@@ -128,9 +128,11 @@ input[type=checkbox] {
     background: $white;
     border: 1px solid $light-gray;
     border-radius: 3px;
+    display: inline-block;
     line-height: 1;
     padding: 10px 20px;
     position: relative;
+    white-space: nowrap;
 
     &:hover{
       border-color:$medium-gray;
