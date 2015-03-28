@@ -1,25 +1,46 @@
 .cards {
-  @include display(flex);
-  @include flex-wrap(wrap);
-  @include justify-content(space-between);
+  @include clearfix();
+  display: block;
+  margin: 0 $base-spacing;
 }
 
 .card {
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-margin: 1em;
-
-  @include flex-basis(15em);
-  @include flex-grow(1);
   @include transition (all 0.2s ease-in-out);
   background-color: $white;
   border-radius: 5px;
-  border: $card-border;
+  border: 1px solid $base-border-color;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   cursor: pointer;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  margin: $base-spacing 0;
   position: relative;
-  position: relative;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    float: right;
+    width: 48%;
+  }
+
+  &:nth-child(2n+1){
+    @include media($medium-screen-up) {
+      clear: both;
+      float: left;
+      margin-right: 4%;
+    }
+  }
+
+  @include media($big-screen-up) {
+    clear: none !important;
+    float: left !important;
+    margin-left: 4%;
+    margin-right: 0 !important;
+    width: 22%;
+  }
+
+  &:first-of-type{
+    @include media($big-screen-up) {
+      margin-left: 0;
+    }
+  }
 
   .card-image {
     height: 125px;
@@ -39,6 +60,7 @@
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1.5em;
+    padding: 0 $base-spacing;
     text-align: center;
     text-transform: uppercase;
   }

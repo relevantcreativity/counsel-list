@@ -11,18 +11,39 @@ $(document).ready(function(){
     type: 'iframe'
   });
 
-    $('select').chosen({
-        allow_single_deselect: true,
-        disable_search_threshold: 5
-    });
+  $('select').chosen({
+    allow_single_deselect: true,
+    disable_search_threshold: 5
+  });
 
+  $(window).smartresize(function(){
+    cardResize($('.cards'));
+    backgroundResize();
+    fullscreenFix();
+  });
+
+  cardResize($('.cards'));
+  backgroundResize();
+  fullscreenFix();
+  $(window).focus(backgroundResize);
 });
 
 
+function cardResize(obj){
+    var maxHeight = -1;
+
+    $('.card', obj).each(function() {
+      $(this).css('height', 'auto');
+      maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+    });
+
+    $('.card', obj).each(function() {
+      $(this).height(maxHeight);
+    });
+};
 
 
 // modified from http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
-
 
 /* detect touch */
 if("ontouchstart" in window){
@@ -44,8 +65,6 @@ function fullscreenFix(){
         }
     });
 }
-$(window).resize(fullscreenFix);
-fullscreenFix();
 
 /* resize background images */
 function backgroundResize(){
@@ -81,9 +100,6 @@ function backgroundResize(){
         path.css("background-size", imgW + "px " + imgH + "px");
     });
 }
-$(window).resize(backgroundResize);
-$(window).focus(backgroundResize);
-backgroundResize();
 
 /* set parallax background-position */
 function parallaxPosition(e){
