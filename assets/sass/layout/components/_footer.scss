@@ -1,7 +1,9 @@
 footer[role=contentinfo]{
   @include clearfix;
-  background: $yellow;
+  background: $dark-gray;
+  font-size: 0.9em;
   margin: 0;
+  text-align: center;
 
   section{
     padding: $base-spacing;
@@ -9,19 +11,23 @@ footer[role=contentinfo]{
     &.footer-content{
       @include clearfix;
 
+      @include media($wide-screen-up) {
+        margin: 0 auto;
+        max-width: 960px;
+      }
+
       margin-bottom: 0;
     }
 
     &.terms{
-      background:$dark-gray;
-      color: $white;
-      line-height: 2em;
+      background:$yellow;
+      color: $dark-gray;
       margin: 0;
-      padding: 0 $base-spacing;
-      text-align: center;
+      padding: $small-spacing $base-spacing;
 
       a{
-        color: $yellow;
+        color: $dark-gray;
+        text-decoration: underline;
       }
     }
   }
@@ -31,9 +37,8 @@ footer[role=contentinfo]{
     text-align: center;
 
     @include media($wide-screen-up) {
-      @include span-columns(6);
-
-      text-align: left;
+      float: left;
+      width: 150px;
     }
 
     img {
@@ -42,54 +47,95 @@ footer[role=contentinfo]{
   }
 
   .footer-links {
-    @include clearfix;
     margin-bottom: 0;
 
+    @include media($large-screen-up) {
+      float:left;
+      margin-left: 5%;
+      width: 30%;
+    }
+
     @include media($wide-screen-up) {
-      @include span-columns(6);
-      @include omega();
+      margin-left: 40px;
+      text-align: left;
+      width: 190px;
+    }
+
+    &.first{
+      @include media($large-screen-up) {
+        margin-left: 0;
+      }
+
+      @include media($wide-screen-up) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .footer-social{
+    @include media($large-screen-up) {
+      clear: both;
+    }
+
+    @include media($wide-screen-up) {
+      clear: none;
+      float: right;
+      margin-top: 1em;
+      width: 50px;
+    }
+
+    a{
+      @include media($wide-screen-up) {
+        display: block;
+        margin-bottom: 0.5em;
+      }
     }
   }
 
   ul {
     margin-bottom: $base-spacing * 2;
-
-    @include media($medium-screen-up) {
-      @include span-columns(2 of 6);
-      @include omega(3n);
-      @include clearfix;
-    }
-  }
-
-  li {
-    text-align: center;
-
-    @include media($medium-screen-up) {
-      text-align: left;
-    }
   }
 
   li a {
-    color: $dark-gray;
+    color: $light-gray;
+    line-height: 1.6em;
 
     &:focus,
     &:hover {
-      text-decoration: underline;
-    }
-
-    @include media($medium-screen-up) {
-      padding-left: $base-spacing;
+      color: $white;
     }
   }
 
   li h3 {
-    background: $dark-gray;
-    color: $white;
-    font-size: 1.4em;
-    font-weight: 800;
+    border-bottom: 1px solid $light-gray;
+    color: $light-gray;
+    font-size: 1.6em;
+    font-weight: 300;
     line-height: 2em;
     margin-bottom: 0.4em;
-    text-align: center;
+    text-transform: uppercase;
+  }
+
+  a.facebook{
+    color: $facebook;
+
+    &:hover{
+      color: darken($facebook, 15%);
+    }
+  }
+  a.twitter{
+    color: $twitter;
+
+    &:hover{
+      color: darken($twitter, 15%);
+    }
+  }
+  a.linkedin{
+    color: $linkedin;
+
+    &:hover{
+      color: darken($linkedin, 15%);
+    }
   }
 
 }
