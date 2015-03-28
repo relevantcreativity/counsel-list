@@ -1,25 +1,45 @@
 .cards {
-  @include display(flex);
-  @include flex-wrap(wrap);
-  @include justify-content(space-between);
+  @include clearfix();
 }
 
-.card {
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-margin: 1em;
 
-  @include flex-basis(15em);
-  @include flex-grow(1);
-  @include transition (all 0.2s ease-in-out);
-  background-color: $white;
-  border-radius: 5px;
-  border: $card-border;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
-  margin: 0 $card-margin $base-spacing $card-margin;
-  position: relative;
-  position: relative;
+.card {
+  margin: $base-spacing;
+
+  .card-wrapper{
+    @include transition (all 0.2s ease-in-out);
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid $base-border-color;
+    box-shadow: 0 2px 4px darken($base-background-color, 10%);
+    cursor: pointer;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      background-color: darken($white, 2%);
+    }
+  }
+
+
+  @include media($medium-screen-up) {
+    float: right;
+    margin: $base-spacing $base-spacing $base-spacing 0;
+    width: 43%;
+  }
+
+  &:nth-child(2n+1){
+    @include media($medium-screen-up) {
+      clear: both;
+      float: left;
+      margin: $base-spacing;
+    }
+  }
+
+  @include media($large-screen-up) {
+    width: 45%;
+  }
+
 
   .card-image {
     height: 125px;
@@ -39,6 +59,7 @@
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1.5em;
+    padding: 0 $base-spacing;
     text-align: center;
     text-transform: uppercase;
   }
@@ -55,10 +76,5 @@
     a.button{
       margin: 0 auto;
     }
-  }
-
-  &:focus,
-  &:hover {
-    background-color: darken($white, 2%);
   }
 }
