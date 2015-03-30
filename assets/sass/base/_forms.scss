@@ -1,3 +1,8 @@
+form em{
+  display: block;
+  font-size: 0.8em;
+}
+
 fieldset {
   @include clearfix();
 

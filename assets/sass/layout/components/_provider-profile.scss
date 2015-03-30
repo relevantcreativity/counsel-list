@@ -153,6 +153,27 @@
             @include omega();
           }
         }
+
+        &.full{
+          @include span-columns(7 of 9);
+
+          h4, p{
+            @include span-columns(7 of 7);
+            @include omega();
+          }
+
+          dl{
+            @include clearfix();
+
+            dt{
+              @include span-columns(2 of 7);
+            }
+            dd{
+              @include span-columns(5 of 7);
+              @include omega();
+            }
+          }
+        }
       }
 
       .additional{

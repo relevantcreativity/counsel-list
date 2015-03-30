@@ -58,6 +58,16 @@ fieldset{
     }
   }
 
+  p.col-third{
+    @include media($large-screen-up) {
+      @include span-columns(2); //eh, close enough
+    }
+
+    @include media($wide-screen-up) {
+      @include span-columns(4);
+    }
+  }
+
   p.col-two{
     @include media($large-screen-up) {
       @include span-columns(2);

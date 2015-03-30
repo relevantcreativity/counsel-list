@@ -11,9 +11,22 @@ $(document).ready(function(){
     type: 'iframe'
   });
 
-  $('select').chosen({
-    allow_single_deselect: true,
-    disable_search_threshold: 5
+  $(document).ready(function() {
+    $('.tooltip').tooltipster();
+  });
+
+  $.each($('select'), function(k, obj){
+    var limit = 0;
+    if($(obj).attr('data-limit')){
+        limit = $(obj).attr('data-limit');
+    }
+
+    $(obj).chosen({
+        allow_single_deselect: true,
+        disable_search_threshold: 5,
+        max_selected_options: limit
+    });
+
   });
 
   $(window).smartresize(function(){
