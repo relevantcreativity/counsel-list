@@ -29,7 +29,10 @@ a.button {
     box-shadow: 3px 3px 0 0 darken($action-color, 30%);
   }
 
-  &:disabled {
+  &:disabled, &.disabled {
+    background-color: $medium-gray;
+    box-shadow: 3px 3px 0 0 darken($medium-gray, 15%);
+    color: $white;
     cursor: not-allowed;
     opacity: 0.5;
   }

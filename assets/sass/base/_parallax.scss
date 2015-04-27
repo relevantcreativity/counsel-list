@@ -17,6 +17,14 @@
     }
   }
 
+  &.small-screen{
+    height:30%;
+
+    @include media($medium-screen-up) {
+      max-height: 300px;
+    }
+  }
+
   &.fullscreen,
   &.fullscreen.not-overflow,{
     min-height:600px;

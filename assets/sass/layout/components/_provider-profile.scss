@@ -20,6 +20,8 @@
 
   .image{
 
+    text-align: center;
+
     img{
       max-width: 50%;
     }
@@ -181,6 +183,8 @@
         @include span-columns(3 of 9);
         @include omega();
 
+        text-align: right;
+
         h4, p{
           @include span-columns(3 of 3);
           @include omega();
@@ -270,6 +274,17 @@
       text-align: left;
       vertical-align: top;
 
+      div.left{
+        @include span-columns(2 of 3);
+      }
+
+      div.right{
+        @include span-columns(1 of 3);
+        @include omega();
+
+        text-align: right;
+      }
+
       h4, p{
         @include span-columns(3 of 3);
         @include omega();
@@ -324,6 +339,15 @@
       @include span-columns(8);
       @include omega();
 
+      div.left{
+        @include span-columns(5 of 8);
+      }
+
+      div.right{
+        @include span-columns(3 of 8);
+        @include omega();
+      }
+
       h4, p{
         @include span-columns(8 of 8);
         @include omega();
@@ -360,6 +384,15 @@
       @include span-columns(9);
       @include omega();
 
+      div.left{
+        @include span-columns(6 of 9);
+      }
+
+      div.right{
+        @include span-columns(3 of 9);
+        @include omega();
+      }
+
       h4, p{
         @include span-columns(9 of 9);
         @include omega();
@@ -393,6 +426,83 @@
   }
 }
 
+.profile.listing{
+  @include clearfix;
+
+  background: $white;
+  margin: $base-spacing 0;
+  position: relative;
+  text-align: left;
+
+  h3, h5{
+    margin: 0;
+    text-align: left;
+  }
+
+  .image{
+    @include span-columns(6);
+    @include omega();
+
+    text-align: center;
+
+    img{
+      max-height: 125px;
+      max-width: 100%;
+    }
+  }
+
+  .main{
+    @include span-columns(6);
+    @include omega();
+  }
+
+  @include media($medium-screen-up) {
+    @include clearfix;
+
+    .image{
+      @include span-columns(1);
+    }
+
+    .main{
+      @include span-columns(3);
+      @include omega();
+    }
+
+  }
+
+  @include media($large-screen-up) {
+    @include clearfix;
+
+    .image{
+      @include span-columns(2);
+    }
+
+    .main{
+      @include span-columns(6);
+      @include omega();
+    }
+  }
+
+  @include media($wide-screen-up) {
+    @include clearfix;
+    @include span-columns(6);
+
+    &:nth-child(2n){
+      @include omega();
+    }
+
+    .image{
+      @include span-columns(2 of 6);
+    }
+
+    .main{
+      @include span-columns(4 of 6);
+      @include omega();
+
+    }
+  }
+}
+
 .profile{
   font-size: 0.85em;
 
@@ -406,6 +516,20 @@
     .fa-star, .fa-star-half-o{
       color: $yellow;
     }
+  }
+
+  .myers-briggs{
+    span{
+      background: $soft-gray;
+      border: 1px solid $medium-gray;
+      font-weight: bold;
+      margin: 0 5px 0 0;
+      padding: 5px 10px;
+    }
+  }
+
+  strong.header{
+    text-transform: uppercase;
   }
 
   dl{
