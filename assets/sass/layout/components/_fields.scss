@@ -88,6 +88,29 @@ fieldset{
     }
   }
 
+  span.image-preview{
+    width: 100%;
+
+    @include media($medium-screen-up) {
+      display: table;
+    }
+
+
+    span{
+      text-align: center;
+
+      @include media($medium-screen-up) {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+      }
+
+      img{
+        max-width: 200px;
+      }
+    }
+  }
+
   p.hidden{
     display: none;
   }

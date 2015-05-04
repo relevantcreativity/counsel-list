@@ -46,8 +46,8 @@ label {
   font-weight: 300;
   margin-bottom: $small-spacing / 2;
 
-  &.required::after {
-    content: "*";
+  &.required {
+    font-weight: bold;
   }
 
   abbr {

@@ -105,19 +105,15 @@
       @include span-columns(3);
       @include omega();
     }
-    section.membership{
-      @include span-columns(8);
-      @include omega();
-    }
     section.reviews.full{
       @include span-columns(8);
       @include omega();
     }
-    section.reviews.half, section.map{
+    section.reviews.half, section.map, section.membership{
       @include span-columns(4);
     }
 
-    section.map{
+    section.membership, section.map{
       @include omega();
     }
   }
@@ -215,10 +211,6 @@
       @include span-columns(5);
       @include omega();
     }
-    section.membership{
-      @include span-columns(12);
-      @include omega();
-    }
     section.reviews.full{
       @include span-columns(12);
       @include omega();
@@ -234,11 +226,11 @@
       }
     }
 
-    section.reviews.half, section.map{
+    section.reviews.half, section.map, section.membership{
       @include span-columns(6);
     }
 
-    section.map{
+    section.membership, section.map{
       @include omega();
     }
   }
@@ -554,52 +546,5 @@
 
   .comment-page{
     @include clearfix();
-  }
-
-  .comment{
-    font-size: 0.8em;
-
-    .text{
-      &:before{
-        @include triangle(30px, $blue, up-left);
-
-        bottom: -20px;;
-        content: " ";
-        position: absolute;
-        right: 25px;
-      }
-
-      background: $blue;
-      color: $white;
-      padding: $base-spacing;
-      position: relative;
-      text-align: justify;
-
-      span.rating{
-        display: block;
-        font-size: 0.75em;
-        text-align: center;
-
-        i{
-          padding:0 2px;
-
-          &.fa-star{
-            color: $yellow;
-          }
-        }
-      }
-    }
-
-    p{
-      color: $medium-gray;
-      margin-top: 5px;
-      padding-right: 65px;
-      text-align: right;
-
-      span{
-        color: $dark-gray;
-        text-transform: uppercase;
-      }
-    }
   }
 }

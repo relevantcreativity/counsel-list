@@ -1,0 +1,86 @@
+.comment{
+  border: 1px solid $light-gray;
+  font-size: 0.8em;
+  margin-bottom: $base-spacing;
+  padding: $base-spacing;
+  position: relative;
+
+  .text{
+    background: $soft-gray;
+    margin: $base-spacing 0;
+    padding: $base-spacing;
+    text-align: justify;
+  }
+
+  ul.leaders {
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none;
+
+    li{
+      @include clearfix;
+    }
+  }
+
+  ul.leaders li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+  }
+  ul.leaders span:first-child {
+    padding-right: 0.33em;
+    background: white
+  }
+  ul.leaders span + span {
+    float: right;
+    padding-left: 0.33em;
+    background: white
+  }
+
+  span.rating{
+    display: block;
+    font-size: 0.75em;
+    text-align: center;
+
+    i{
+      padding:0 2px;
+
+      &.fa-star, &.fa-circle{
+        color: $yellow;
+      }
+    }
+  }
+
+  aside{
+    display: table;
+    width: 100%;
+
+    p.name, div.image{
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    p.name{
+      color: $medium-gray;
+      padding-right: 20px;
+      text-align: right;
+
+      span{
+        color: $dark-gray;
+        text-transform: uppercase;
+      }
+    }
+
+    div.image{
+      text-align: center;
+      width: 100px;
+
+      img{
+        max-width: 100% !important;
+      }
+    }
+  }
+
+
+}
