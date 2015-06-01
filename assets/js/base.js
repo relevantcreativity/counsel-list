@@ -11,6 +11,39 @@ $(document).ready(function(){
     type: 'iframe'
   });
 
+  $('.popup-gallery').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+    }
+  });
+
+  $('.image-popup-no-margins').magnificPopup({
+    type: 'image',
+    closeOnContentClick: true,
+    closeBtnInside: false,
+    fixedContentPos: true,
+    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+    image: {
+      verticalFit: true,
+      titleSrc: function(item) {
+        return item.el.attr('title');
+      }
+    },
+    zoom: {
+      enabled: true,
+      duration: 300 // don't foget to change the duration also in CSS
+    }
+  });
+
   $(document).ready(function() {
     $('.tooltip').tooltipster();
   });
@@ -115,40 +148,40 @@ function backgroundResize(){
 }
 
 /* set parallax background-position */
-function parallaxPosition(e){
-    var heightWindow = $(window).height();
-    var topWindow = $(window).scrollTop();
-    var bottomWindow = topWindow + heightWindow;
-    var currentWindow = (topWindow + bottomWindow) / 2;
-    $(".parallax").each(function(i){
-        var path = $(this);
-        var height = path.height();
-        var top = path.offset().top;
-        var bottom = top + height;
-        // only when in range
-        if(bottomWindow > top && topWindow < bottom){
-            var imgW = path.data("resized-imgW");
-            var imgH = path.data("resized-imgH");
-            // min when image touch top of window
-            var min = 0;
-            // max when image touch bottom of window
-            var max = - imgH + heightWindow;
-            // overflow changes parallax
-            var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
-            top = top - overflowH;
-            bottom = bottom + overflowH;
-            // value with linear interpolation
-            var value = min + (max - min) * (currentWindow - top) / (bottom - top);
-            // set background-position
-            var orizontalPosition = path.attr("data-oriz-pos");
-            orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
-            $(this).css("background-position", orizontalPosition + " " + value + "px");
-        }
-    });
-}
-if(!$("html").hasClass("touch")){
-    $(window).resize(parallaxPosition);
-    //$(window).focus(parallaxPosition);
-    $(window).scroll(parallaxPosition);
-    parallaxPosition();
-}
+// function parallaxPosition(e){
+//     var heightWindow = $(window).height();
+//     var topWindow = $(window).scrollTop();
+//     var bottomWindow = topWindow + heightWindow;
+//     var currentWindow = (topWindow + bottomWindow) / 2;
+//     $(".parallax").each(function(i){
+//         var path = $(this);
+//         var height = path.height();
+//         var top = path.offset().top;
+//         var bottom = top + height;
+//         // only when in range
+//         if(bottomWindow > top && topWindow < bottom){
+//             var imgW = path.data("resized-imgW");
+//             var imgH = path.data("resized-imgH");
+//             // min when image touch top of window
+//             var min = 0;
+//             // max when image touch bottom of window
+//             var max = - imgH + heightWindow;
+//             // overflow changes parallax
+//             var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
+//             top = top - overflowH;
+//             bottom = bottom + overflowH;
+//             // value with linear interpolation
+//             var value = min + (max - min) * (currentWindow - top) / (bottom - top);
+//             // set background-position
+//             var orizontalPosition = path.attr("data-oriz-pos");
+//             orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
+//             $(this).css("background-position", orizontalPosition + " " + value + "px");
+//         }
+//     });
+// }
+// if(!$("html").hasClass("touch")){
+//     $(window).resize(parallaxPosition);
+//     //$(window).focus(parallaxPosition);
+//     $(window).scroll(parallaxPosition);
+//     parallaxPosition();
+// }

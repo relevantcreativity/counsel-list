@@ -51,10 +51,23 @@ fieldset{
   p.col-quarter{
     @include media($large-screen-up) {
       @include span-columns(2);
+
+      &.large-full{
+        @include span-columns(8);
+        @include omega();
+      }
     }
 
     @include media($wide-screen-up) {
       @include span-columns(3);
+
+      &.large-full{
+        @include span-columns(3);
+
+        &.col-last{
+          @include omega();
+        }
+      }
     }
   }
 
@@ -71,10 +84,23 @@ fieldset{
   p.col-two{
     @include media($large-screen-up) {
       @include span-columns(2);
+
+      &.large-full{
+        @include span-columns(8);
+        @include omega();
+      }
     }
 
     @include media($wide-screen-up) {
       @include span-columns(2);
+
+      &.large-full{
+        @include span-columns(2);
+
+        &.col-last{
+          @include omega();
+        }
+      }
     }
   }
 

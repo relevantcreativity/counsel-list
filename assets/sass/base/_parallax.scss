@@ -1,6 +1,6 @@
 // modified from http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
 
-.parallax{
+.parallax, .hero{
   position: relative;
 
   &.background {
@@ -68,7 +68,17 @@
 
       &.border{
         border: 2px solid $yellow;
+        font-size: 0.7em;
+        font-weight: normal;
         position: relative;
+
+        @include media($medium-screen-up) {
+          font-size: 0.9em;
+        }
+
+        @include media($large-screen-up) {
+          font-size: 1.2em;
+        }
 
         &:before{
           border: 2px solid $yellow;
@@ -78,6 +88,12 @@
           position: absolute;
           right: 5px;
           top: 5px;
+          z-index: 1;
+        }
+
+        div{
+          position: relative;
+          z-index: 2;
         }
       }
     }

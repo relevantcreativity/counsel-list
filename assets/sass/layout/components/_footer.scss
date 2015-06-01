@@ -116,6 +116,14 @@ footer[role=contentinfo]{
         }
       }
 
+      &.instagram{
+        color: $instagram;
+
+        &:hover{
+          color: darken($instagram, 15%);
+        }
+      }
+
     }
   }
 

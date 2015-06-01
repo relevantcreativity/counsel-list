@@ -14,13 +14,12 @@ a.button {
   font-family: $heading-font-family;
   font-size: $base-font-size;
   font-weight: 600;
-  line-height: 2.5em;
-  padding: 0 1em;
+  line-height: 1;
+  padding: 1em;
   position: relative;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
-  white-space: nowrap;
 
   &:hover,
   &:focus {

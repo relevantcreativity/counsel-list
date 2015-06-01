@@ -1,9 +1,4 @@
 .sidebar{
-  display: none;
-
-  @include media($large-screen-up) {
-    display: block;
-  }
 
   ul{
 
