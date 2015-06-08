@@ -45,7 +45,9 @@ $(document).ready(function(){
   });
 
   $(document).ready(function() {
-    $('.tooltip').tooltipster();
+    $('.tooltip').tooltipster({
+      contentAsHTML: true
+    });
   });
 
   $.each($('select'), function(k, obj){

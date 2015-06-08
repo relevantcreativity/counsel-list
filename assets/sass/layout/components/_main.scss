@@ -64,6 +64,10 @@ section{
   color: $dark-gray;
 }
 
+.white{
+  color: $white;
+}
+
 .page-content{
   @include clearfix;
 

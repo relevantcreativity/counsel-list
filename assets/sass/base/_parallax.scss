@@ -17,6 +17,14 @@
     }
   }
 
+  &.near-fullscreen {
+    height:75%;
+
+    @include media($medium-screen-up) {
+      min-height: 500px;
+    }
+  }
+
   &.small-screen{
     height:30%;
 
@@ -68,16 +76,24 @@
 
       &.border{
         border: 2px solid $yellow;
-        font-size: 0.7em;
+        font-size: 0.75em;
         font-weight: normal;
         position: relative;
 
         @include media($medium-screen-up) {
-          font-size: 0.9em;
+          font-size: 1em;
         }
 
         @include media($large-screen-up) {
-          font-size: 1.2em;
+          font-size: 1.15em;
+        }
+
+        @include media($wide-screen-up) {
+          font-size: 1.25em;
+        }
+
+        @include media($big-screen-up) {
+          font-size: 1.4em;
         }
 
         &:before{
