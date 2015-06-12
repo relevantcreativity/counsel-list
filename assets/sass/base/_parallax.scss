@@ -111,6 +111,16 @@
           position: relative;
           z-index: 2;
         }
+
+        a{
+          color: $yellow;
+
+          &:active,
+          &:focus,
+          &:hover {
+            color: darken($yellow, 15%);
+          }
+        }
       }
     }
   }

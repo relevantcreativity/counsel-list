@@ -80,6 +80,16 @@ a {
   &:focus {
     outline: none;
   }
+
+  &.yellow{
+    color: $yellow;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($yellow, 15%);
+    }
+  }
 }
 
 hr {
