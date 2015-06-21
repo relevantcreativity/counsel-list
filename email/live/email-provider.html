@@ -208,7 +208,7 @@
                                           <!-- Title -->
                                           <tr>
                                              <td style="font-family: Helvetica, arial, sans-serif;font-size: 30px;color: #333333;text-align: center;line-height: 30px;border-collapse: collapse;" st-title="fulltext-heading">
-                                                Thank You For Creating An Account
+                                                You Have A New Inquiry!
                                              </td>
                                           </tr>
                                           <!-- End of Title -->
@@ -220,11 +220,13 @@
                                           <!-- content -->
                                           <tr>
                                              <td style="font-family: Helvetica, arial, sans-serif;font-size: 16px;color: #666666;text-align: left;line-height: 30px;border-collapse: collapse;" st-content="fulltext-content">
-                                                <p>Thank you for creating a user account on <strong>Counsel</strong>LIST directory.</p>
-
-                                                <p>To edit your account, simply login to the <a href="https://www.counsellist.com/providers/login">Manage Account</a> section.</p>
-
-                                                <p>Be sure to also connect with us on <a href="https://www.facebook.com/pages/CounselList/1376916775968718">Facebook</a>, <a href="https://twitter.com/counsellist">Twitter</a> and <a href="https://instagram.com/counsellist/">Instagram</a> accounts!</p>
+                                                <p>Dear {#form.variables.profileName} ({#form.variables.profileEmail}),</p>
+                                                <p>The following person requested more information from you on {ap:date format="F d, Y \a\t g:i A T"}</p>
+                                                <p><strong>{#form.fields.name.label}</strong> : {#form.fields.name.value}</p>
+                                                <p><strong>{#form.fields.email.label}</strong> : {#form.fields.email.value}</p>
+                                                <p><strong>{#form.fields.phone.label}</strong> : {#form.fields.phone.value}</p>
+                                                <p><strong>{#form.fields.message.label}</strong> : {#form.fields.message.value}</p>
+                                                <p>Thanks,<br /><strong>Counsel</strong>LIST</p>
                                              </td>
                                           </tr>
                                           <!-- End of content -->
