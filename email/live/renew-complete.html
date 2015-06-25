@@ -236,19 +236,23 @@
                                                 <a href="mailto:Support@CounselLIST.com">Support@CounselLIST.com</a><br />
                                                 Billing Department: (303) 840-0003</p>
 
-                                                <p>The following charge will appear as a payment to “CounselLIST.com” on your bank or credit card statement:</p>
+                                                <p>The following charge will appear as a payment to "CounselLIST.com" on your bank or credit card statement:</p>
 
-                                                <table>
+                                                <table width="100%" cellpadding="0" cellspacing="0">
                                                    <thead>
                                                       <tr>
-                                                         <th>Date</th>
-                                                         <th>Description / Amount</th>
+                                                         <th style="border-bottom:1px solid #000; width:25%;">Date</th>
+                                                         <th style="border-bottom:1px solid #000; width:35%;">Description</th>
+                                                         <th style="border-bottom:1px solid #000; width:25%;">Interval</th>
+                                                         <th style="border-bottom:1px solid #000; width:15%;">Amount</th>
                                                       </tr>
                                                    </thead>
                                                    <tbody>
                                                       <tr>
                                                          <td>{ap:date format="F d, Y"}</td>
-                                                         <td>{#submission.fields.levelPayment.value}</td>
+                                                         <td>{#profile.membershipLevel.levelName}</td>
+                                                         <td>{#profile.membershipLevel.intervalName}</td>
+                                                         <td>${#profile.membershipLevel.levelIntervalAmount}</td>
                                                       </tr>
                                                    </tbody>
                                                 </table>
